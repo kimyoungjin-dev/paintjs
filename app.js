@@ -1,27 +1,27 @@
 const canvas = document.getElementById("jsCanvas");
-
-let painting = false;
-
-function stopPainting() {
-  painting = false;
-}
-
-function onMouseMove(event) {
+const painting = false;
+function mouseMove(event) {
   const x = event.offsetX;
   const y = event.offsetY;
 }
-
-function onMouseDown(event) {
+function stopPainting() {
+  painting = false;
+}
+function mouseDown(event) {
   painting = true;
 }
 
-function onMouseUp(event) {
-  stopPainting();
+function mouseUp(event) {
+  painting = false;
+}
+
+function mouseLeave(event) {
+  painting = false;
 }
 
 if (canvas) {
-  canvas.addEventListener("mousemove", onMouseMove);
-  canvas.addEventListener("mousedown", onMouseDown);
-  canvas.addEventListener("mouseup", onMouseUp);
-  canvas.addEventListener("mouseleave", stopPainting);
+  canvas.addEventListener("mousemove", mouseMove);
+  canvas.addEventListener("mousedown", mouseDown);
+  canvas.addEventListener("mouseup", mouseUp);
+  canvas.addEventListener("mouseleave");
 }
