@@ -1,4 +1,5 @@
 const canvas = document.getElementById("jsCanvas");
+
 let painting = false;
 
 function stopPainting() {
@@ -21,6 +22,6 @@ function onMouseUp(event) {
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
   canvas.addEventListener("mousedown", onMouseDown);
-  canvas.addEventListener("mouseup".onMouseUp);
+  canvas.addEventListener("mouseup", onMouseUp);
   canvas.addEventListener("mouseleave", stopPainting);
 }
